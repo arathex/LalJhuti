@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #f79902;
+--font-zen: "Zen Kaku Gothic Antique", sans-serif;
+  --font-Google: "Google Sans Code", monospace;
+}
+
+
