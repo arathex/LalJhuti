@@ -10,8 +10,8 @@ function App() {
 
   return (
     <>
-      {/* <Home/> */}
-      <Motion/>
+      <Home/>
+      {/* <Motion/> */}
       {/* <Devil /> */}
       {/* <CustomImageList/> */}
     </>
