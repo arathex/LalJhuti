@@ -136,7 +136,7 @@ const Home = () => {
          e.stopPropagation();
       }
       setActiveDrag(null);
-   };
+   }; 
 
    // Mouse event listeners
    useEffect(() => {
