@@ -17,6 +17,7 @@ import soundFour from '../sound/SUn.mp3'
 import { Sun, Volume1 } from 'lucide-react';
 
 
+
 // Images
 import about from '../assets/chatting.png'
 import linked from '../assets/linked.png'
