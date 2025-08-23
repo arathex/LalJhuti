@@ -21,6 +21,7 @@ import { Sun, Volume1 } from 'lucide-react';
 import about from '../assets/chatting.png'
 import linked from '../assets/linked.png'
 import contact from '../assets/contact-us.png'
+import faq from '../assets/faq.png'
 import sun from '../assets/sun.png'
 import sunshine from '../assets/sunshine.png'
 import avatar from '../assets/IMG_8912.jpg'
@@ -264,6 +265,11 @@ const Home = () => {
                         {/* Links */}
                         <div onMouseDown={openingWindowSound} onClick={toggleWindow('links')} className="flex items-center flex-col">
                            <img className='hover:scale-110 w-20 cursor-pointer duration-150 transition-all' src={contact} alt="links.png" />
+                           <p className='cursor-pointer'>Links</p>
+                        </div>
+                        {/* Faq */}
+                        <div onMouseDown={openingWindowSound} onClick={toggleWindow('links')} className="flex items-center flex-col">
+                           <img className='hover:scale-110 w-20 cursor-pointer duration-150 transition-all' src={faq} alt="faq.png" />
                            <p className='cursor-pointer'>Links</p>
                         </div>
                      </div>
