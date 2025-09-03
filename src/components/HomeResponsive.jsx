@@ -259,7 +259,7 @@ const Home = () => {
 
    return (
       <>
-         <section>
+         <section style={{ overflowX: 'hidden', minHeight: '100vh' }}>
             <div>
                {/* Top Icons */}
                <Flex className="gap-x-5 cursor-pointer bg-white p-5 ">
@@ -474,10 +474,10 @@ const Home = () => {
             {/* Wave Animation */}
 
             <Wave
-               className='absolute lg:bottom-0 bottom-20 left-0 -z-10'
+               className='absolute lg:bottom-0 bottom-10 overflow-hidden left-0 -z-10'
                fill='#f79902'
                paused={false}
-               style={{ display: 'flex', width: '100%', }}
+               style={{ display: 'flex', width: '100%' }}
                options={{
                   height: 40,
                   amplitude: 40,
@@ -486,7 +486,7 @@ const Home = () => {
                }}
 
             ></Wave>
-            <div className="text-white overflow-hidden fixed bottom-42 lg:bottom-0 left-1/2 -translate-1/2 -z-10"> © All rights reserved by `AR</div>
+            <div className="text-white overflow-hidden fixed bottom-10 lg:bottom-0 left-1/2 -translate-x-1/2 -z-10"> © All rights reserved by `AR</div>
 
          </section>
       </>
