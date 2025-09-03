@@ -1,79 +1,48 @@
-// components/Contact.jsx
-import { motion } from 'framer-motion';
-import { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
-export default function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+const SoftwareUsed = () => {
+  const [isOpen, setIsOpen] = useState(true);
+  const contentRef = useRef(null);
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+  const [height, setHeight] = useState('auto');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // You can plug this into Formspree, Netlify Forms, or Firebase
-    console.log('Submitted:', form);
-    alert('Your message has been sent with love 💌');
-    setForm({ name: '', email: '', message: '' });
-  };
+  useEffect(() => {
+    if (contentRef.current) {
+      setHeight(isOpen ? `${contentRef.current.scrollHeight}px`:'0px');
+    }
+  }, [isOpen]);
 
   return (
-    <section className="bg-gradient-to-br from-pink-50 to-yellow-100 py-12 px-6 rounded-xl shadow-xl max-w-3xl mx-auto">
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-3xl font-bold text-center text-rose-600 mb-6"
+    <div className="bg-yellow-50 border border-yellow-100 p-4 rounded-md max-w-md mx-auto">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="font-mono text-gray-800 text-lg mb-2 cursor-pointer focus:outline-none"
       >
-        💌 Contact
-      </motion.h2>
+        ↓ what software do you use?
+      </button>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <motion.input
-          type="text"
-          name="name"
-          value={form.name}
-          onChange={handleChange}
-          placeholder="Your name"
-          className="w-full p-3 rounded-lg border border-rose-300 focus:outline-none focus:ring-2 focus:ring-rose-400"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.2 }}
-        />
-
-        <motion.input
-          type="email"
-          name="email"
-          value={form.email}
-          onChange={handleChange}
-          placeholder="Your email"
-          className="w-full p-3 rounded-lg border border-rose-300 focus:outline-none focus:ring-2 focus:ring-rose-400"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.4 }}
-        />
-
-        <motion.textarea
-          name="message"
-          value={form.message}
-          onChange={handleChange}
-          placeholder="Write something poetic, or just say hi!"
-          rows="5"
-          className="w-full p-3 rounded-lg border border-rose-300 focus:outline-none focus:ring-2 focus:ring-rose-400"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.6 }}
-        />
-
-        <motion.button
-          type="submit"
-          className="bg-rose-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-rose-600 transition"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+      <div
+        ref={contentRef}
+        style={{ height }}
+        className="overflow-hidden transition-all duration-200 ease-in-out"
         >
-          Send Message ✨
-        </motion.button>
-      </form>
-    </section>
+        <ul className="list-disc list-inside text-gray-700 space-y-1 mt-2">
+          <li>
+            illustration: <a href="#" className="text-orange-500 underline">Clip Studio Paint EX</a>
+          </li>
+          <li>
+            animation: <a href="#" className="text-orange-500 underline">Clip Studio Paint EX</a>, Adobe Animate
+          </li>
+          <li>
+            3D: blender 2.83 LTS
+          </li>
+          <li>
+            feel free to check the rest of the tools I use in the <span className="text-orange-500 underline">Work window</span>!
+          </li>
+        </ul>
+      </div>
+    </div>
   );
-}
+};
+
+export default SoftwareUsed;

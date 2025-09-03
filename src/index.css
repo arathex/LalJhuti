@@ -1,8 +1,11 @@
 body {
   font-family: "Courier New", monospace;
+  font-weight: 500;
   background-color: #f8f8f0;
   color: #333;
 }
 
-
+a {
+  text-decoration: none;
+}
 

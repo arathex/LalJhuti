@@ -12,12 +12,12 @@ const photos = [
    { img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45", title: "Camera" },
    { img: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c", title: "Coffee" },
    { img: "https://images.unsplash.com/photo-1533827432537-70133748f5c8", title: "Hats" },
-   { img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62", title: "Honey", featured: true },
+   { img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62", title: "Honey", },
+   { img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f", title: "Fern", featured: true },
    { img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6", title: "Basketball" },
-   { img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f", title: "Fern" },
    { img: "https://images.unsplash.com/photo-1597645587822-e99fa5d45d25", title: "Mushrooms" },
    { img: "https://images.unsplash.com/photo-1567306301408-9b74779a11af", title: "Tomato basil" },
-   { img: "https://images.unsplash.com/photo-1471357674240-e1a485acb3e1", title: "Sea star" },
+   { img: "https://images.unsplash.com/photo-1471357674240-e1a485acb3e1", title: "Sea star" , featured: true },
    { img: "https://images.unsplash.com/photo-1589118949245-7d38baf380d6", title: "Bike" },
 ];
 
@@ -35,20 +35,20 @@ export default function PhotoShowcase() {
 
    return (
       <>
-         <button type="button" onClick={() => setOpen(true)}>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-2 max-w-4xl mx-auto p-4">
+         <div className="h-[400px] w-[1000px]">
+            <button type="button" onClick={() => setOpen(true)} className={`overflow-y-auto h-[450px] `}>
+            <div className="grid grid-cols-2 py-5 md:grid-cols-3 mb-[60px] gap-2 max-w-[1000px] mx-auto p-4">
                {photos.map((item, i) => (
                   <div
-                     key={i}
-                     className={`relative group overflow-hidden rounded-xl shadow-md ${item.featured ? "md:col-span-2 md:row-span-2" : ""
+                     className={`relative group overflow-hidden  rounded-xl shadow-md ${item.featured ? "md:col-span-2 md:row-span-2" : ""
                         }`}
-                     onClick={() => setIndex(i)}
+              
                   >
                      <img
                         src={item.img}
                         alt={item.title}
                         onClick={() => handleImageClick(index)}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="w-full h-full cursor-pointer object-cover transition-transform duration-500 group-hover:scale-110"
                      />
                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-70 group-hover:opacity-90 transition"></div>
                      <div className="absolute top-2 left-2 flex items-center gap-2 text-white">
@@ -60,6 +60,7 @@ export default function PhotoShowcase() {
             </div>
 
          </button>
+         </div>
 
          <Lightbox
             open={open}
