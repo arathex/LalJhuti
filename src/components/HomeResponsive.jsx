@@ -486,7 +486,7 @@ const Home = () => {
                }}
 
             ></Wave>
-            <div className="text-white overflow-hidden fixed bottom-10 lg:bottom-0 left-1/2 -translate-x-1/2 -z-10"> © All rights reserved by `AR</div>
+            <div className="text-white overflow-hidden items-center fixed bottom-5 lg:bottom-0 left-1/2 -translate-x-1/2 -z-10"> © All rights reserved by `AR</div>
 
          </section>
       </>
