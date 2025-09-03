@@ -474,7 +474,7 @@ const Home = () => {
             {/* Wave Animation */}
 
             <Wave
-               className='absolute lg:bottom-0 bottom-10 overflow-hidden left-0 -z-10'
+               className='absolute lg:bottom-0 bottom-0 overflow-hidden left-0 -z-10'
                fill='#f79902'
                paused={false}
                style={{ display: 'flex', width: '100%' }}
