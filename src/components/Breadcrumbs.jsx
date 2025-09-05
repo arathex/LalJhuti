@@ -15,8 +15,9 @@ export default function ArtistProfile() {
    const [food, setFood] = useState(false);
    const [dance, setDance] = useState(false);
    const [kipta, setkipta] = useState(false);
+   const [gan, setGan] = useState(false);
    return (
-      <div className="max-w-2xl mx-auto p-4 space-y-4 overflow-y-auto h-[300px]">
+      <div className="max-w-2xl mx-auto p-4 space-y-4 overflow-y-auto">
          <div  className="bg-yellow-50 border border-yellow-200 rounded-lg">
             <button
                onClick={() => setManush(!manush)}
@@ -187,6 +188,35 @@ export default function ArtistProfile() {
                         <span >
                            <strong>Janina,,emniii mon cheyeche taii..deksho ami kotto valo '
                               tao oi sokina amk dam deina 😒 </strong>
+                           <a href="#" className="text-orange-500 hover:text-orange-600 underline">
+                           </a>
+                        </span>
+                     </li>
+                  </ul>
+               </div>
+
+            )}
+         </div>
+         <div className="bg-yellow-50 border border-yellow-200 rounded-lg">
+            <button
+               onClick={() => setGan(!gan)}
+               className="w-full flex items-center justify-between p-4 text-left hover:bg-yellow-100 transition-colors"
+            >
+               <h2 className="text-lg font-medium text-gray-700">Group song</h2>
+               {gan ? (
+                  <ChevronUp className="w-5 h-5 text-gray-500" />
+               ) : (
+                  <ChevronDown className="w-5 h-5 text-gray-500" />
+               )}
+            </button>
+
+            {gan && (
+               <div className="px-4 pb-4 pt-2 bg-white">
+                  <ul className="space-y-2 text-gray-600">
+                     <li className="flex items-start ">
+                        <span className="w-2 mb-5 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span >
+                           <strong>Absolutelyy🎵</strong>
                            <a href="#" className="text-orange-500 hover:text-orange-600 underline">
                            </a>
                         </span>

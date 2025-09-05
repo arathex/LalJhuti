@@ -291,9 +291,9 @@ const Home = () => {
                      </h2>
 
                      {/* Navigation Icons */}
-                     <div className="flex gap-x-5">
+                     <div className="flex gap-x-7">
                         {/* About */}
-                        <div className="lg:flex gap-x-5">
+                        <div className="lg:flex space-y-4 gap-x-7">
                            <div onMouseDown={openingWindowSound} onClick={toggleWindow('about')} className="flex items-center flex-col">
                               <img className='hover:scale-110 w-20 cursor-pointer duration-150 transition-all' src={about} alt="about.png" />
                               <p className='cursor-pointer'>About</p>
@@ -306,7 +306,7 @@ const Home = () => {
                            </div>
                         </div>
 
-                        <div className="lg:flex gap-x-5">
+                        <div className="lg:flex space-y-4 gap-x-7">
                            {/* Contact */}
                            <div onMouseDown={openingWindowSound} onClick={toggleWindow('contact')} className="flex items-center flex-col">
                               <img className='hover:scale-110 w-20 cursor-pointer duration-150 opacity-80 transition-all' src={contact} alt="links.png" />
@@ -324,14 +324,14 @@ const Home = () => {
             </div>
 
 
-            {/* Draggable Windows */}
+            {/* Draggable Windows------------------------------- */}
 
             {/* About */}
             <DraggableWindow
-               className="draggable-window"
+               className={`w-[600px] ${isMobile ? 'hidden' : 'block'}`}
                windowName="about"
                title="about"
-               isOpen={windows.about.isOpen}
+               isOpen={windows.about.isOpen && !isMobile}
                position={windows.about.position}
                zIndex={windows.about.zIndex}
             >
@@ -339,7 +339,6 @@ const Home = () => {
                   <motion.img
                      initial="hidden"
                      animate="visible"
-                     // variants={avatarVariants}
                      className="w-[120px] rounded-full hover:scale-110 transition-all duration-200 mx-3"
                      src={avatar}
                      alt="avatar"
@@ -347,25 +346,21 @@ const Home = () => {
                   <div className='select-none'>
                      <h3 className="text-primary text-[30px]">ami u-man</h3>
                      <p className="text-[14px]">
-                        Amr <span className="text-primary">chul khule</span>  balcony te boshe <span className="text-primary">time spend</span> korte bhalo lage
+                        Amr <span className="text-primary">chul khule</span> balcony te boshe <span className="text-primary">time spend</span> korte bhalo lage
                      </p>
                   </div>
                </Flex>
 
                {/* Contents */}
-               <div className="h-[200px] overflow-y-auto select-none">
-
+               <div className="h-[200px] overflow-y-scroll select-none">
                   <div className="max-w-2xl mx-auto px-5 text-gray-800 font-sans">
-
-
                      {/* Intro () */}
                      <p className='font-Google text-[14px] pb-5'>
-                        <span className='font-mono font-semibold text-xl uppercase'>    Ekta jiber jonmer diner niye biboron</span> <br /><br />
-
+                        <span className='font-mono font-semibold text-xl uppercase'> Ekta jiber jonmer diner niye biboron</span> <br /><br />
                         Starting kmne kri no idea,,Oi <span className='text-primary'>Alutar</span> shte jekhanei jai, shobai ke hype-ekta <span className='text-primary'>positve aura</span> dey. Or hashitao mneeee ekdm..kind a kiivabe bolii..o k hashte dekhle nijer kacheo ekta hashir vab or face e akta <span className='text-primary'>smilee</span> type chole Ashe..or song er mtn or life er whole playlist,,<br />
                         she nije jevabe lead krche amr kache honestly massively <span className='text-primary'>perfect</span> e mne hoi or each and every minor sector eiii^^..or namee to onk kichui bola jaii but definately... :) <br />
-                        <br /> Oi <span className='text-primary'>Dherosh</span> tar moddhe etto rosh kosh ache..one kind of perfect person..Happy Birthday re GOAT chachii! <span className='text-lg'>🧛‍♀️</span></p>
-
+                        <br /> Oi <span className='text-primary'>Dherosh</span> tar moddhe etto rosh kosh ache..one kind of perfect person..Happy Birthday re GOAT chachii! <span className='text-lg'>🧛‍♀️</span>
+                     </p>
 
                      {/* Interests */}
                      <span className="font-mono font-semibold text-xl md:text-2xl mt-6 block">Day to Day</span>
@@ -374,14 +369,12 @@ const Home = () => {
                         <li>• Night spinding like a Owl</li>
                         <li>• Virtual BFF type.. <span className='text-primary'>Anna</span> </li>
                         <li>• During these days,,Ludo ekta boro interest (Added on <span className='text-primary'>15</span>.08.25)</li>
-
                      </ul>
 
                      {/* Pochondo */}
                      <span className="font-mono font-semibold text-xl md:text-2xl mt-6 block">Pochondo</span>
-
                      <ul className="mt-2 text-[14px] font-Google">
-                        <li>  • Song genre: Je vibe ashe, shei vibe</li>
+                        <li> • Song genre: Je vibe ashe, shei vibe</li>
                         <li > • Food: Momo,<span className='text-primary'>cha, ar random midnight</span> snacks,,bakito motamoti halal ja ache shb e khai fele</li>
                         <li className='flex items-center '> • Dream trip: <span className='text-[30px] px-3'> 🇺🇬</span><span className='text-lg'></span>(You better know)</li>
                      </ul>
@@ -389,21 +382,130 @@ const Home = () => {
                </div>
                {/* Contents */}
             </DraggableWindow>
+            {isMobile && windows.about.isOpen && (
+               <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="fixed inset-0 z-50 flex items-end justify-center lg:hidden  opacity-20"
+               >
+                  <motion.div
+                     initial={{ y: '100%' }}
+                     animate={{ y: '0%' }}
+                     exit={{ y: '100%' }}
+                     transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                     className="bg-white border-2 border-gray-300 rounded-t-xl overflow-hidden w-full h-[90vh]"
+                  >
+                     {/* Header */}
+                     <div className="bg-gray-800 text-white px-4 py-3 flex justify-between items-center">
+                        <h4 className="text-lg font-medium">About</h4>
+                        <button
+                           onClick={() => setWindows(prev => ({ ...prev, about: { ...prev.about, isOpen: false } }))}
+                           onMouseUp={closeWindowSound}
+                           className={`text-gray-300 duration-200 px-2 text-[20px] hover:scale-120 hover:text-white hover:bg-opacity-20 transition-all rounded tracking-widest `}
+                        >
+                           [x]
+                        </button>
+                     </div>
+
+                     {/* Content */}
+                     <div className="text-gray-800 p-4 h-full overflow-y-scroll">
+                        <Flex className={`pb-3 flex-col text-center`}>
+                           <motion.img
+                              initial="hidden"
+                              animate="visible"
+                              className="w-[120px] rounded-full hover:scale-110 transition-all duration-200 mx-3"
+                              src={avatar}
+                              alt="avatar"
+                           />
+                           <div className='select-none'>
+                              <h3 className="text-primary text-[30px]">ami u-man</h3>
+                              <p className="text-[14px]">
+                                 Amr <span className="text-primary">chul khule</span> balcony te boshe <span className="text-primary">time spend</span> korte bhalo lage
+                              </p>
+                           </div>
+                        </Flex>
+
+                        <div className="max-w-2xl mx-auto px-5 text-gray-800 font-sans pb-20">
+                           {/* Intro () */}
+                           <p className='font-Google text-[14px] pb-5'>
+                              <span className='font-mono font-semibold text-xl uppercase'> Ekta jiber jonmer diner niye biboron</span> <br /><br />
+                              Starting kmne kri no idea,,Oi <span className='text-primary'>Alutar</span> shte jekhanei jai, shobai ke hype-ekta <span className='text-primary'>positve aura</span> dey. Or hashitao mneeee ekdm..kind a kiivabe bolii..o k hashte dekhle nijer kacheo ekta hashir vab or face e akta <span className='text-primary'>smilee</span> type chole Ashe..or song er mtn or life er whole playlist,,<br />
+                              she nije jevabe lead krche amr kache honestly massively <span className='text-primary'>perfect</span> e mne hoi or each and every minor sector eiii^^..or namee to onk kichui bola jaii but definately... :) <br />
+                              <br /> Oi <span className='text-primary'>Dherosh</span> tar moddhe etto rosh kosh ache..one kind of perfect person..Happy Birthday re GOAT chachii! <span className='text-lg'>🧛‍♀️</span>
+                           </p>
+
+                           {/* Interests */}
+                           <span className="font-mono font-semibold text-xl md:text-2xl mt-6 block">Day to Day</span>
+                           <ul className="mt-2 font-Google text-[14px]">
+                              <li>• Inhale-Exhale</li>
+                              <li>• Night spinding like a Owl</li>
+                              <li>• Virtual BFF type.. <span className='text-primary'>Anna</span> </li>
+                              <li>• During these days,,Ludo ekta boro interest (Added on <span className='text-primary'>15</span>.08.25)</li>
+                           </ul>
+
+                           {/* Pochondo */}
+                           <span className="font-mono font-semibold text-xl md:text-2xl mt-6 block">Pochondo</span>
+                           <ul className="mt-2 text-[14px] font-Google">
+                              <li> • Song genre: Je vibe ashe, shei vibe</li>
+                              <li > • Food: Momo,<span className='text-primary'>cha, ar random midnight</span> snacks,,bakito motamoti halal ja ache shb e khai fele</li>
+                              <li className='flex items-center '> • Dream trip: <span className='text-[30px] px-3'> 🇺🇬</span><span className='text-lg'></span>(You better know)</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </motion.div>
+               </motion.div>
+            )}
+            {/* About */}
 
             {/* Memories */}
             <DraggableWindow
-               className={``}
+               className={`w-[700px] ${isMobile ? 'hidden' : 'block'}`}
                windowName="memories"
                title="memories"
-               isOpen={windows.memories.isOpen}
+               isOpen={windows.memories.isOpen && !isMobile}
                position={windows.memories.position}
-               zIndex={windows.memories.zIndex}
-            >
+               zIndex={windows.memories.zIndex} >
                <Devil />
             </DraggableWindow>
+            {isMobile && windows.memories.isOpen && (
+               <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="fixed inset-0 z-50 flex items-end justify-center lg:hidden"
+               >
+                  <motion.div
+                     initial={{ y: '100%' }}
+                     animate={{ y: '0%' }}
+                     exit={{ y: '100%' }}
+                     transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                     className="bg-white border-2 border-gray-300 rounded-t-xl overflow-hidden w-full h-[90vh]"
+                  >
+                     {/* Header */}
+                     <div className="bg-gray-800 text-white px-4 py-3 flex justify-between items-center">
+                        <h4 className="text-lg font-medium">Memories</h4>
+                        <button
+                           onClick={() => setWindows(prev => ({ ...prev, memories: { ...prev.memories, isOpen: false } }))}
+                           onMouseUp={closeWindowSound}
+                           className={`text-gray-300 duration-200 px-2 text-[20px] hover:scale-120 hover:text-white hover:bg-opacity-20 transition-all rounded tracking-widest `}
+                        >
+                           [x]
+                        </button>
+                     </div>
+
+                     {/* Content */}
+                     <div className="text-gray-800 p-4 ">
+                        <Devil />
+                     </div>
+                  </motion.div>
+               </motion.div>
+            )}
+            {/* Memories */}
 
             {/* Contact */}
-            {/* Desktop Version - Only show on lg+ devices */}
             <DraggableWindow
                className={`w-[700px] ${isMobile ? 'hidden' : 'block'}`}
                windowName="contact"
@@ -414,14 +516,12 @@ const Home = () => {
             >
                <ContactLinks />
             </DraggableWindow>
-            {/* Mobile Version - Only show on mobile devices */}
             {isMobile && windows.contact.isOpen && (
                <div className="absolute top-30 z-50 flex items-center justify-center lg:hidden">
                   <div className="bg-white border-2 border-gray-300 rounded-lg overflow-hidden">
                      {/* Header */}
                      <div className="bg-gray-800 text-white px-4 py-3 flex justify-between items-center">
                         <h4 className="text-lg font-medium">Contact</h4>
-
                         <button
                            onClick={() => setWindows(prev => ({ ...prev, contact: { ...prev.contact, isOpen: false } }))}
                            onMouseUp={closeWindowSound}
@@ -432,42 +532,109 @@ const Home = () => {
                      </div>
 
                      {/* Content */}
-                     <div className="text-gray-800 p-4 max-h-80 overflow-y-auto">
+                     <div className="text-gray-800 p-4 max-h-full ">
                         <ContactLinks />
                      </div>
                   </div>
                </div>
             )}
+            {/* Contact */}
 
             {/* Faqs */}
             <DraggableWindow
-               windowClassName={`w-[600px]`}
+               className={`w-[600px] ${isMobile ? 'hidden' : 'block'}`}
                windowName="faq"
                title="faq"
-               isOpen={windows.faq.isOpen}
+               isOpen={windows.faq.isOpen && !isMobile}
                position={windows.faq.position}
-               zIndex={windows.faq.zIndex}
-            >
+               zIndex={windows.faq.zIndex}>
                <div>
                   <Breadcrumbs />
                </div>
             </DraggableWindow>
+            {isMobile && windows.faq.isOpen && (
+               <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="fixed inset-0 z-50 flex items-end justify-center lg:hidden"
+               >
+                  <motion.div
+                     initial={{ y: '100%' }}
+                     animate={{ y: '0%' }}
+                     exit={{ y: '100%' }}
+                     transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                     className="bg-white border-2 border-gray-300 rounded-t-xl overflow-hidden w-full h-[90vh]"
+                  >
+                     {/* Header */}
+                     <div className="bg-gray-800 text-white px-4 py-3 flex justify-between items-center">
+                        <h4 className="text-lg font-medium">FAQ</h4>
+                        <button
+                           onClick={() => setWindows(prev => ({ ...prev, faq: { ...prev.faq, isOpen: false } }))}
+                           onMouseUp={closeWindowSound}
+                           className="text-gray-300 duration-200 px-2 text-[20px] hover:scale-120 hover:text-white hover:bg-opacity-20 transition-all rounded tracking-widest"
+                        >
+                           [x]
+                        </button>
+                     </div>
+                     {/* Content */}
+                     <div className="text-gray-800 p-4 h-full overflow-y-scroll">
+                        <Breadcrumbs />
+                     </div>
+                  </motion.div>
+               </motion.div>
+            )}
+            {/* Faqs */}
 
             {/* Downloads */}
             <DraggableWindow
+               className={`w-[700px] ${isMobile ? 'hidden' : 'block'}`}
                headerClassName='!bg-primary !hover:text-white '
                buttonClassName='text-white'
                windowClassName="!bg-amber-50 border-b-2 border-l-2 border-r-2 border-primary"
                windowName="downloads"
                title={`downloads`}
-               isOpen={windows.downloads.isOpen}
+               isOpen={windows.downloads.isOpen && !isMobile}
                position={windows.downloads.position}
                zIndex={windows.downloads.zIndex}
             >
-
                <DownloadablesShowcase />
-
             </DraggableWindow>
+            {isMobile && windows.downloads.isOpen && (
+               <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="fixed inset-0 z-50 flex items-end justify-center lg:hidden"
+               >
+                  <motion.div
+                     initial={{ y: '100%' }}
+                     animate={{ y: '0%' }}
+                     exit={{ y: '100%' }}
+                     transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                     className="bg-amber-50 border-2 border-primary rounded-t-xl overflow-hidden w-full h-[90vh]"
+                  >
+                     {/* Header */}
+                     <div className="bg-primary text-white px-4 py-3 flex justify-between items-center">
+                        <h4 className="text-lg font-medium">Downloads</h4>
+                        <button
+                           onClick={() => setWindows(prev => ({ ...prev, downloads: { ...prev.downloads, isOpen: false } }))}
+                           onMouseUp={closeWindowSound}
+                           className="text-white duration-200 px-2 text-[20px] hover:scale-120 hover:text-white hover:bg-opacity-20 transition-all rounded tracking-widest"
+                        >
+                           [x]
+                        </button>
+                     </div>
+                     {/* Content */}
+                     <div className="text-gray-800 p-4 h-full overflow-y-scroll">
+                        <DownloadablesShowcase />
+                     </div>
+                  </motion.div>
+               </motion.div>
+            )}
+            {/* Downloads */}
 
 
 
@@ -486,7 +653,7 @@ const Home = () => {
                }}
 
             ></Wave>
-            <div className="text-white overflow-hidden items-center fixed bottom-5 lg:bottom-0 left-1/2 -translate-x-1/2 -z-10"> © All rights reserved by `AR</div>
+            <div className="text-white w-full text-center fixed bottom-5 left-1/2 -translate-x-1/2 -z-10 "> © All rights reserved by `AR</div>
 
          </section>
       </>

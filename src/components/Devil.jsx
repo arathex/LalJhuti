@@ -17,7 +17,7 @@ const photos = [
    { img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6", title: "Basketball" },
    { img: "https://images.unsplash.com/photo-1597645587822-e99fa5d45d25", title: "Mushrooms" },
    { img: "https://images.unsplash.com/photo-1567306301408-9b74779a11af", title: "Tomato basil" },
-   { img: "https://images.unsplash.com/photo-1471357674240-e1a485acb3e1", title: "Sea star" , featured: true },
+   { img: "https://images.unsplash.com/photo-1471357674240-e1a485acb3e1", title: "Sea star", featured: true },
    { img: "https://images.unsplash.com/photo-1589118949245-7d38baf380d6", title: "Bike" },
 ];
 
@@ -35,31 +35,31 @@ export default function PhotoShowcase() {
 
    return (
       <>
-         <div className="h-[400px] w-[1000px]">
-            <button type="button" onClick={() => setOpen(true)} className={`overflow-y-auto h-[450px] `}>
-            <div className="grid grid-cols-2 py-5 md:grid-cols-3 mb-[60px] gap-2 max-w-[1000px] mx-auto p-4">
-               {photos.map((item, i) => (
-                  <div
-                     className={`relative group overflow-hidden  rounded-xl shadow-md ${item.featured ? "md:col-span-2 md:row-span-2" : ""
-                        }`}
-              
-                  >
-                     <img
-                        src={item.img}
-                        alt={item.title}
-                        onClick={() => handleImageClick(index)}
-                        className="w-full h-full cursor-pointer object-cover transition-transform duration-500 group-hover:scale-110"
-                     />
-                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-70 group-hover:opacity-90 transition"></div>
-                     <div className="absolute top-2 left-2 flex items-center gap-2 text-white">
-                        <Star className="w-5 h-5 opacity-70 hover:text-yellow-400 transition" />
-                        <span className="font-semibold">{item.title}</span>
-                     </div>
-                  </div>
-               ))}
-            </div>
+         <div className="lg:h-[400px] lg:w-[1000px]">
+            <button type="button" onClick={() => setOpen(true)} className={`overflow-y-auto h-[700px] lg:pb-[300px]`}>
+               <div className="grid lg:py-5 md:grid-cols-3 gap-2 lg:max-w-[1000px] mx-auto p-4">
+                  {photos.map((item, i) => (
+                     <div
+                        className={`relative group overflow-hidden  rounded-xl shadow-md ${item.featured ? "md:col-span-2 md:row-span-2" : ""
+                           }`}
 
-         </button>
+                     >
+                        <img
+                           src={item.img}
+                           alt={item.title}
+                           onClick={() => handleImageClick(index)}
+                           className="w-full h-full cursor-pointer object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 group-hover:opacity-90 transition"></div>
+                        <div className="absolute top-2 left-2 flex items-center gap-2 text-white">
+                           <Star className="w-5 h-5 opacity-70 hover:text-yellow-400 transition" />
+                           <span className="font-semibold">{item.title}</span>
+                        </div>
+                     </div>
+                  ))}
+               </div>
+
+            </button>
          </div>
 
          <Lightbox
