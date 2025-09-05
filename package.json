@@ -16,6 +16,7 @@
     "@mui/styled-engine-sc": "^7.3.1",
     "@tailwindcss/vite": "^4.1.11",
     "gsap": "^3.13.0",
+    "jszip": "^3.10.1",
     "lightbox.js-react": "^1.6.2",
     "lucide": "^0.539.0",
     "lucide-react": "^0.539.0",

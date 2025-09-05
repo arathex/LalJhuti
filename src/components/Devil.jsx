@@ -6,20 +6,51 @@ import "yet-another-react-lightbox/styles.css";
 import { Star } from "lucide-react";
 import { useState } from "react";
 
+// Images
+import image01 from "../assets/images/01.jpg";
+import image02 from "../assets/images/02.jpg";
+import image03 from "../assets/images/03.jpg";
+import image04 from "../assets/images/04.jpg";
+import image05 from "../assets/images/05.jpg";
+import image06 from "../assets/images/06.jpg";
+import image07 from "../assets/images/07.jpg";
+import image08 from "../assets/images/08.jpg";
+import image09 from "../assets/images/09.jpg";
+import image10 from "../assets/images/10.jpg";
+import image11 from "../assets/images/11.jpg";
+import image12 from "../assets/images/12.jpg";
+import image13 from "../assets/images/13.jpg";
+import image14 from "../assets/images/14.jpg";
+import image15 from "../assets/images/15.jpg";
+import image16 from "../assets/images/16.jpg";
+import image17 from "../assets/images/17.jpg";
+import image18 from "../assets/images/18.jpg";
+import image19 from "../assets/images/19.jpg";
+
+
+
 const photos = [
-   { img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e", title: "Breakfast", featured: true },
-   { img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d", title: "Burger" },
-   { img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45", title: "Camera" },
-   { img: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c", title: "Coffee" },
-   { img: "https://images.unsplash.com/photo-1533827432537-70133748f5c8", title: "Hats" },
-   { img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62", title: "Honey", },
-   { img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f", title: "Fern", featured: true },
-   { img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6", title: "Basketball" },
-   { img: "https://images.unsplash.com/photo-1597645587822-e99fa5d45d25", title: "Mushrooms" },
-   { img: "https://images.unsplash.com/photo-1567306301408-9b74779a11af", title: "Tomato basil" },
-   { img: "https://images.unsplash.com/photo-1471357674240-e1a485acb3e1", title: "Sea star", featured: true },
-   { img: "https://images.unsplash.com/photo-1589118949245-7d38baf380d6", title: "Bike" },
+  { img: image01, title: "Breakfast", featured: true },
+  { img: image02, title: "Burger" },
+  { img: image03, title: "Camera" },
+  { img: image04, title: "Coffee" },
+  { img: image05, title: "Hats" },
+  { img: image06, title: "Honey" },
+  { img: image07, title: "Fern", featured: true },
+  { img: image08, title: "Basketball" },
+  { img: image09, title: "Mushrooms" },
+  { img: image10, title: "Tomato basil" },
+  { img: image11, title: "Sea star", featured: true },
+  { img: image12, title: "Bike" },
+  { img: image13, title: "Bike" },
+  { img: image14, title: "Bike" },
+  { img: image15, title: "Bike" },
+  { img: image16, title: "Bike" },
+  { img: image17, title: "Bike" },
+  { img: image18, title: "Bike" },
+  { img: image19, title: "Bike" },
 ];
+
 
 export default function PhotoShowcase() {
    const [open, setOpen] = React.useState(false);
@@ -62,7 +93,7 @@ export default function PhotoShowcase() {
             </button>
          </div>
 
-         <Lightbox
+         {/* <Lightbox
             open={open}
             plugins={[Fullscreen, Slideshow]}
             index={startIndex}
@@ -76,20 +107,36 @@ export default function PhotoShowcase() {
                }
             }}
             slides={[
-               { src: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e" },
-               { src: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d" },
-               { src: "https://images.unsplash.com/photo-1522770179533-24471fcdba45" },
-               { src: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c" },
-               { src: "https://images.unsplash.com/photo-1533827432537-70133748f5c8" },
-               { src: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62" },
-               { src: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6" },
-               { src: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f" },
-               { src: "https://images.unsplash.com/photo-1597645587822-e99fa5d45d25" },
-               { src: "https://images.unsplash.com/photo-1567306301408-9b74779a11af" },
-               { src: "https://images.unsplash.com/photo-1471357674240-e1a485acb3e1" },
-               { src: "https://images.unsplash.com/photo-1589118949245-7d38baf380d6" },
+               { src: "../assets/images/01.jpg" },
+               { src: "../assets/images/02.jpg" },
+               { src: "../assets/images/03.jpg" },
+               { src: "../assets/images/04.jpg" },
+               { src: "../assets/images/05.jpg" },
+               { src: "../assets/images/06.jpg" },
+               { src: "../assets/images/07.jpg" },
+               { src: "../assets/images/08.jpg" },
+               { src: "../assets/images/09.jpg" },
+               { src: "../assets/images/10.jpg" },
+               { src: "../assets/images/11.jpg" },
+               { src: "../assets/images/12.jpg" },
+               { src: "../assets/images/13.jpg" },
+               { src: "../assets/images/14.jpg" },
+               { src: "../assets/images/15.jpg" },
+               { src: "../assets/images/16.jpg" },
+               { src: "../assets/images/17.jpg" },
+               { src: "../assets/images/18.jpg" },
+               { src: "../assets/images/19.jpg" },
             ]}
-         />
+         /> */}
+
+         <Lightbox
+  open={open}
+  index={startIndex}
+  close={() => setOpen(false)}
+  slides={photos.map(photo => ({ src: photo.img }))}
+  plugins={[Fullscreen, Slideshow]}
+/>
+
 
       </>
    );

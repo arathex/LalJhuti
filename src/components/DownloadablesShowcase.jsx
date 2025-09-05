@@ -10,14 +10,14 @@ const DownloadablesShowcase = () => {
 
    return (
       <>
-         <div className="p-4 rounded-[5px] lg:w-[500px] h-[500px] mb-3 overflow-y-auto select-none">
+         <div className="p-4 rounded-[5px] lg:w-[500px] pb-10 lg:h-[500px] mb-3 overflow-y-auto select-none">
             <p className='font-Google rounded-lg p-5 bg-white text-center'>here's some free stuff for for you enjoyment. Ik I am best,,no "Thank you" needed!
                hehe..enjoy buddyy# </p>
 
-            <div className="h-[350px]  mt-5">
+            <div className=" mt-5">
                <div className="m-auto gap-4 lg:flex-row flex flex-col justify-around items-center">
-                  {/* <img className='w-[200px] hover:scale-105 transition-all duration-200 rounded-lg' src={Front} alt="Ayyu_One.png" /> */}
-                  {/* <img className='w-[200px] hover:scale-105 transition-all duration-200 rounded-lg' src={Back} alt="Ayyu_Two.png" /> */}
+                  <img className='w-[200px] hover:scale-105 transition-all duration-200 rounded-lg' src={Front} alt="Ayyu_One.png" />
+                  <img className='w-[200px] hover:scale-105 transition-all duration-200 rounded-lg' src={Back} alt="Ayyu_Two.png" />
                </div>
                <h2 className='font-Google text-center mt-5 mb-3'>Virtual Friendship Identity Card</h2>
                <div className="flex justify-center mb-10 mt-2">
