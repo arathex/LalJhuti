@@ -1,19 +1,17 @@
-// IMG
-import Front from '../assets/Ayyu_One.png'
-import Back from '../assets/Ayyu_Two.png'
 import Flex from './Flex'
 import SaveButton from './layouts/saveButton';
 
 // IMG
+import Front from '../assets/Ayyu_One.png'
+import Back from '../assets/Ayyu_Two.png'
+// IMG
 
 const DownloadablesShowcase = () => {
-
    return (
       <>
          <div className="p-4 rounded-[5px] lg:w-[500px] pb-10 lg:h-[500px] mb-3 overflow-y-auto select-none">
             <p className='font-Google rounded-lg p-5 bg-white text-center'>here's some free stuff for for you enjoyment. Ik I am best,,no "Thank you" needed!
                hehe..enjoy buddyy# </p>
-
             <div className=" mt-5">
                <div className="m-auto gap-4 lg:flex-row flex flex-col justify-around items-center">
                   <img className='w-[200px] hover:scale-105 transition-all duration-200 rounded-lg' src={Front} alt="Ayyu_One.png" />

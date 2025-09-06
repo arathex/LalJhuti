@@ -4,10 +4,12 @@ import Flex from './Flex';
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-
 import useSound from 'use-sound';
 
-
+import Devil from './Devil';
+import Breadcrumbs from './Breadcrumbs';
+import ContactLinks from './ContactLinks';
+import DownloadablesShowcase from './DownloadablesShowcase';
 
 // Sounds
 import soundOne from '../sound/Closing.wav'
@@ -18,8 +20,6 @@ import soundFour from '../sound/SUn.mp3'
 // Icons
 import { Sun, Volume1 } from 'lucide-react';
 
-
-
 // Images
 import about from '../assets/chatting.png'
 import linked from '../assets/linked.png'
@@ -28,10 +28,6 @@ import faq from '../assets/faq.png'
 import sun from '../assets/sun.png'
 import sunshine from '../assets/sunshine.png'
 import avatar from '../assets/IMG_8912.jpg'
-import Devil from './Devil';
-import Breadcrumbs from './Breadcrumbs';
-import ContactLinks from './ContactLinks';
-import DownloadablesShowcase from './DownloadablesShowcase';
 
 const Home = () => {
 
@@ -198,7 +194,7 @@ const Home = () => {
 
       return (
          <div
-            className={` bg-white border-2 border-gray-300 rounded-lg shadow-lg overflow-hidden ${windowClassName}`}
+            className={`fixed bg-white border-2 border-gray-300 rounded-lg shadow-lg overflow-hidden ${windowClassName}`}
             style={{
                left: `${position.x}px`,
                top: `${position.y}px`,
@@ -209,7 +205,8 @@ const Home = () => {
                if (!e.target.closest("button")) {
                   bringToFront(windowName);
                }
-            }} >
+            }}
+         >
             {/* Window Header */}
             <div
                className={`bg-gray-800 text-white px-3 p-2.5 transition-all duration-200 ease-in-out rounded-t-md select-none ${activeDrag === windowName ? 'bg-gray-700' : ''} ${headerClassName}`}
@@ -236,24 +233,6 @@ const Home = () => {
          </div>
       );
    };
-
-
-
-
-
-
-   // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
-   // const avatarVariants = {
-   //    hidden: { scale: 0.8, opacity: 0 },
-   //    visible: { scale: 1, opacity: 1, transition: { duration: 0.5 } },
-   // }
-
-   // const textVariants = {
-   //    hidden: { x: -20, opacity: 0 },
-   //    visible: { x: 0, opacity: 1, transition: { duration: 0.6, delay: 0.2 } },
-   // }
 
    return (
       <>
@@ -501,7 +480,6 @@ const Home = () => {
                </motion.div>
             )}
             {/* Memories */}
-
             {/* Contact */}
             <DraggableWindow
                className={`w-[700px] ${isMobile ? 'hidden' : 'block'}`}
@@ -514,26 +492,37 @@ const Home = () => {
                <ContactLinks />
             </DraggableWindow>
             {isMobile && windows.contact.isOpen && (
-               <div className="absolute top-30 z-50 flex items-center justify-center lg:hidden">
-                  <div className="bg-white border-2 border-gray-300 rounded-lg overflow-hidden">
+               <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="fixed inset-0 z-50 flex items-end justify-center lg:hidden"
+               >
+                  <motion.div
+                     initial={{ y: '100%' }}
+                     animate={{ y: '0%' }}
+                     exit={{ y: '100%' }}
+                     transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                     className="bg-white border-2 border-gray-300 rounded-t-xl overflow-hidden w-full h-[80vh]"
+                  >
                      {/* Header */}
                      <div className="bg-gray-800 text-white px-4 py-3 flex justify-between items-center">
                         <h4 className="text-lg font-medium">Contact</h4>
                         <button
                            onClick={() => setWindows(prev => ({ ...prev, contact: { ...prev.contact, isOpen: false } }))}
                            onMouseUp={closeWindowSound}
-                           className={`text-gray-300 duration-200 px-2 text-[20px] hover:scale-120 hover:text-white hover:bg-opacity-20 transition-all rounded tracking-widest `}
+                           className="text-gray-300 duration-200 px-2 text-[20px] hover:scale-120 hover:text-white hover:bg-opacity-20 transition-all rounded tracking-widest"
                         >
                            [x]
                         </button>
                      </div>
-
                      {/* Content */}
-                     <div className="text-gray-800 p-4 max-h-full ">
+                     <div className="text-gray-800 p-4 h-full overflow-y-scroll">
                         <ContactLinks />
                      </div>
-                  </div>
-               </div>
+                  </motion.div>
+               </motion.div>
             )}
             {/* Contact */}
 
@@ -611,21 +600,20 @@ const Home = () => {
                      animate={{ y: '0%' }}
                      exit={{ y: '100%' }}
                      transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                     className="bg-amber-50 border-2 border-primary rounded-t-xl overflow-hidden w-full h-[90vh]"
+                     className="bg-amber-50 border-2 border-primary rounded-t-xl overflow-hidden "
                   >
                      {/* Header */}
-                     <div className="bg-primary text-white px-4 py-3 flex justify-between items-center">
+                     <div className="bg-primary text-white px-4 py-3 flex justify-between overflow-hidden items-center">
                         <h4 className="text-lg font-medium">Downloads</h4>
                         <button
                            onClick={() => setWindows(prev => ({ ...prev, downloads: { ...prev.downloads, isOpen: false } }))}
                            onMouseUp={closeWindowSound}
-                           className="text-white duration-200 px-2 text-[20px] hover:scale-120 hover:text-white hover:bg-opacity-20 transition-all rounded tracking-widest"
-                        >
+                           className="text-white duration-200 px-2 text-[20px] hover:scale-120 hover:text-white hover:bg-opacity-20 transition-all rounded tracking-widest">
                            [x]
                         </button>
                      </div>
                      {/* Content */}
-                     <div className="text-gray-800 p-4 overflow-y-scroll">
+                     <div className="text-gray-800 p-4 overflow-y-scroll h-[83vh]">
                         <DownloadablesShowcase />
                      </div>
                   </motion.div>
@@ -634,7 +622,6 @@ const Home = () => {
             {/* Downloads */}
 
             {/* Wave Animation */}
-
             <Wave
                className='absolute bottom-0 lg:bottom-0 overflow-hidden left-0 -z-10'
                fill='#f79902'
@@ -648,8 +635,8 @@ const Home = () => {
                }}
 
             ></Wave>
-            <div className="absolute text-white w-full text-center  bottom-15 left-1/2 -translate-x-1/2 -z-10 "> © All rights reserved by `AR</div>
 
+            <div className="text-white w-full absolute text-center bottom-5 left-1/2 -translate-x-1/2 -z-10 "> © All rights reserved by `AR</div>
          </section>
       </>
    );

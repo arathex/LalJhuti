@@ -3,11 +3,6 @@ import { ChevronUp, ChevronDown } from 'lucide-react';
 import useSound from 'use-sound';
 import boopSfx from '../sound/3 Cute Pop Sounds.mp3';
 
-// Sound Effect
-//  const [paper] = useSound(boopSfx);
-// Sound Effect
-
-
 export default function ArtistProfile() {
    const [manush, setManush] = useState(false);
    const [commission, setCommission] = useState(false);
@@ -197,6 +192,7 @@ export default function ArtistProfile() {
 
             )}
          </div>
+         
          <div className="bg-yellow-50 border border-yellow-200 rounded-lg">
             <button
                onClick={() => setGan(!gan)}

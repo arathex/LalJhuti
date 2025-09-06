@@ -1,11 +1,9 @@
 body {
   font-family: "Courier New", monospace;
   font-weight: 500;
-  /* background-color: #f8f8f0; */
   color: #333;
-  overflow-x: hidden;   /* prevent horizontal scrollbar */
-  overflow-y: hidden;   /* prevent vertical scrollbar */
-  /* height: 100%; */
+  overflow-x: hidden;   
+  overflow-y: hidden; 
 }
 
 a {
