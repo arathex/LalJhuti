@@ -198,7 +198,7 @@ const Home = () => {
 
       return (
          <div
-            className={`fixed bg-white border-2 border-gray-300 rounded-lg shadow-lg overflow-hidden ${windowClassName}`}
+            className={` bg-white border-2 border-gray-300 rounded-lg shadow-lg overflow-hidden ${windowClassName}`}
             style={{
                left: `${position.x}px`,
                top: `${position.y}px`,
@@ -209,8 +209,7 @@ const Home = () => {
                if (!e.target.closest("button")) {
                   bringToFront(windowName);
                }
-            }}
-         >
+            }} >
             {/* Window Header */}
             <div
                className={`bg-gray-800 text-white px-3 p-2.5 transition-all duration-200 ease-in-out rounded-t-md select-none ${activeDrag === windowName ? 'bg-gray-700' : ''} ${headerClassName}`}
@@ -258,7 +257,7 @@ const Home = () => {
 
    return (
       <>
-         <section style={{ overflowX: 'hidden', minHeight: '100vh' }}>
+         <section className="relative" style={{ overflowX: 'hidden', minHeight: '100vh' }}>
             <div>
                {/* Top Icons */}
                <Flex className="gap-x-5 cursor-pointer bg-white p-5 ">
@@ -321,7 +320,6 @@ const Home = () => {
                   </div>
                </Container>
             </div>
-
 
             {/* Draggable Windows------------------------------- */}
 
@@ -627,7 +625,7 @@ const Home = () => {
                         </button>
                      </div>
                      {/* Content */}
-                     <div className="text-gray-800 p-4 h-full overflow-y-scroll">
+                     <div className="text-gray-800 p-4 overflow-y-scroll">
                         <DownloadablesShowcase />
                      </div>
                   </motion.div>
@@ -635,24 +633,22 @@ const Home = () => {
             )}
             {/* Downloads */}
 
-
-
             {/* Wave Animation */}
 
             <Wave
-               className='absolute lg:bottom-0 bottom-0 overflow-hidden left-0 -z-10'
+               className='absolute bottom-0 lg:bottom-0 overflow-hidden left-0 -z-10'
                fill='#f79902'
                paused={false}
                style={{ display: 'flex', width: '100%' }}
                options={{
-                  height: 40,
+                  height: 10,
                   amplitude: 40,
                   speed: 0.25,
                   points: 4
                }}
 
             ></Wave>
-            <div className="text-white w-full text-center fixed bottom-5 left-1/2 -translate-x-1/2 -z-10 "> © All rights reserved by `AR</div>
+            <div className="absolute text-white w-full text-center  bottom-15 left-1/2 -translate-x-1/2 -z-10 "> © All rights reserved by `AR</div>
 
          </section>
       </>
