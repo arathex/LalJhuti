@@ -27,7 +27,7 @@ import contact from '../assets/contact-us.png'
 import faq from '../assets/faq.png'
 import sun from '../assets/sun.png'
 import sunshine from '../assets/sunshine.png'
-import avatar from '../assets/IMG_8912.jpg'
+import avatar from '../assets/contact.png'
 
 const Home = () => {
 
@@ -254,13 +254,13 @@ const Home = () => {
                {/* Main Content */}
                <Container className="lg:h-[450px]  lg:bg-white rounded-b-lg lg:border-3 border-gray-300 rounded-t-lg overflow-hidden lg:mt-25">
                   <header className='bg-gray-800 lg:opacity-100 opacity-0 text-white px-5 p-3 overflow-hidden border-b-3 border-gray-300'>
-                     <h4 className='group  inline relative hover:text-yellow-600'>
+                     <h4 className='group inline relative hover:text-yellow-600'>
                         home
                         <span className='w-0 h-0 absolute bottom-0 left-0 group-hover:w-full group-hover:h-[1px] bg-yellow-500 transition-all cursor-pointer duration-300'></span>
                      </h4>
                   </header>
 
-                  <div className="flex flex-col justify-center text-center items-center my-10 select-none">
+                  <div className="flex flex-col justify-center text-center items-center lg:my-10 select-none">
                      <h1 className='lg:text-[64px] text-[50px] my-3 text-amber-500 tracking-wide'><span className='text-gray-700'>hey!</span> A12345</h1>
                      <h2 className='text-2xl pb-8 pt-4 text-gray-500 '>
                         Wishing you joy on your special day
