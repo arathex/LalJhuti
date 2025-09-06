@@ -236,7 +236,7 @@ const Home = () => {
 
    return (
       <>
-         <section className="relative" style={{ overflowX: 'hidden', minHeight: '80vh' }}>
+         <section className="relative" style={{ overflowX: 'hidden', minHeight: screen }}>
             <div>
                {/* Top Icons */}
                <Flex className="gap-x-5 cursor-pointer bg-white p-5 ">
