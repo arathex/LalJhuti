@@ -8,47 +8,47 @@ import { useState } from "react";
 
 // Images
 import image01 from "../assets/images/01.jpg";
-import image02 from "../assets/images/02.JPG";
-// import image03 from "../assets/images/03.jpg";
-// import image04 from "../assets/images/04.jpg";
-// import image05 from "../assets/images/05.jpg";
-// import image06 from "../assets/images/06.jpg";
-// import image07 from "../assets/images/07.jpg";
-// import image08 from "../assets/images/08.jpg";
-// import image09 from "../assets/images/09.jpg";
-// import image10 from "../assets/images/10.jpg";
-// import image11 from "../assets/images/11.jpg";
-// import image12 from "../assets/images/12.jpg";
-// import image13 from "../assets/images/13.jpg";
-// import image14 from "../assets/images/14.jpg";
-// import image15 from "../assets/images/15.jpg";
-// import image16 from "../assets/images/16.jpg";
-// import image17 from "../assets/images/17.jpg";
-// import image18 from "../assets/images/18.jpg";
-// import image19 from "../assets/images/19.jpg";
+import image02 from "../assets/images/02.jpg";
+import image03 from "../assets/images/03.jpg";
+import image04 from "../assets/images/04.jpg";
+import image05 from "../assets/images/05.jpg";
+import image06 from "../assets/images/06.jpg";
+import image07 from "../assets/images/07.jpg";
+import image08 from "../assets/images/08.jpg";
+import image09 from "../assets/images/09.jpg";
+import image10 from "../assets/images/10.jpg";
+import image11 from "../assets/images/11.jpg";
+import image12 from "../assets/images/12.jpg";
+import image13 from "../assets/images/13.jpg";
+import image14 from "../assets/images/14.jpg";
+import image15 from "../assets/images/15.jpg";
+import image16 from "../assets/images/16.jpg";
+import image17 from "../assets/images/17.jpg";
+import image18 from "../assets/images/18.jpg";
+import image19 from "../assets/images/19.jpg";
 
 
 
 const photos = [
   { img: image01, title: "Breakfast", featured: true },
   { img: image02, title: "Burger" },
-//   { img: image03, title: "Camera" },
-//   { img: image04, title: "Coffee" },
-//   { img: image05, title: "Hats" },
-//   { img: image06, title: "Honey" },
-//   { img: image07, title: "Fern", featured: true },
-//   { img: image08, title: "Basketball" },
-//   { img: image09, title: "Mushrooms" },
-//   { img: image10, title: "Tomato basil" },
-//   { img: image11, title: "Sea star", featured: true },
-//   { img: image12, title: "Bike" },
-//   { img: image13, title: "Bike" },
-//   { img: image14, title: "Bike" },
-//   { img: image15, title: "Bike" },
-//   { img: image16, title: "Bike" },
-//   { img: image17, title: "Bike" },
-//   { img: image18, title: "Bike" },
-//   { img: image19, title: "Bike" },
+  { img: image03, title: "Camera" },
+  { img: image04, title: "Coffee" },
+  { img: image05, title: "Hats" },
+  { img: image06, title: "Honey" },
+  { img: image07, title: "Fern", featured: true },
+  { img: image08, title: "Basketball" },
+  { img: image09, title: "Mushrooms" },
+  { img: image10, title: "Tomato basil" },
+  { img: image11, title: "Sea star", featured: true },
+  { img: image12, title: "Bike" },
+  { img: image13, title: "Bike" },
+  { img: image14, title: "Bike" },
+  { img: image15, title: "Bike" },
+  { img: image16, title: "Bike" },
+  { img: image17, title: "Bike" },
+  { img: image18, title: "Bike" },
+  { img: image19, title: "Bike" },
 ];
 
 
