@@ -227,7 +227,6 @@ const Home = () => {
                   </button>
                </Flex>
             </div>
-
             {/* Window Content */}
             <div className="text-gray-800 p-5">{children}</div>
          </div>
