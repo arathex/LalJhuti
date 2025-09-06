@@ -391,7 +391,7 @@ const Home = () => {
                            <motion.img
                               initial="hidden"
                               animate="visible"
-                              className="w-[120px] rounded-full hover:scale-110 transition-all duration-200 mx-3"
+                              className="w-[150px] rounded-full hover:scale-110 transition-all duration-200 mx-3"
                               src={avatar}
                               alt="avatar"
                            />
