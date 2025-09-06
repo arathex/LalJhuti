@@ -621,23 +621,26 @@ const Home = () => {
             )}
             {/* Downloads */}
 
-            {/* Wave Animation */}
-            <Wave
-               className='absolute bottom-0 lg:bottom-0 overflow-hidden left-0 -z-10'
-               fill='#f79902'
-               paused={false}
-               style={{ display: 'flex', width: '100%' }}
-               options={{
-                  height: 10,
-                  amplitude: 40,
-                  speed: 0.25,
-                  points: 4
-               }}
-
-            ></Wave>
-
-            <div className="text-white w-full absolute text-center bottom-5 left-1/2 -translate-x-1/2 -z-10 "> © All rights reserved by `AR</div>
          </section>
+
+         {/* Wave Animation - Fixed to bottom of viewport */}
+         <Wave
+            className='fixed bottom-0 left-0 w-full -z-10'
+            fill='#f79902'
+            paused={false}
+            style={{ display: 'flex', width: '100%' }}
+            options={{
+               height: 25,
+               amplitude: 35,
+               speed: 0.25,
+               points: 4
+            }}
+         />
+
+         {/* Copyright - Fixed to bottom of viewport */}
+         <div className="fixed bottom-5 left-1/2 -translate-x-1/2 -z-10 text-white w-full text-center">
+            © All rights reserved by `AR
+         </div>
       </>
    );
 }
