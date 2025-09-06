@@ -7,49 +7,89 @@ import { Star } from "lucide-react";
 import { useState } from "react";
 
 // Images
-import image01 from "../assets/images/01.jpg";
-import image02 from "../assets/images/02.jpg";
-import image03 from "../assets/images/03.jpg";
-import image04 from "../assets/images/04.jpg";
-import image05 from "../assets/images/05.jpg";
-import image06 from "../assets/images/06.jpg";
-import image07 from "../assets/images/07.jpg";
-import image08 from "../assets/images/08.jpg";
-import image09 from "../assets/images/09.jpg";
-import image10 from "../assets/images/10.jpg";
-import image11 from "../assets/images/11.jpg";
-import image12 from "../assets/images/12.jpg";
-import image13 from "../assets/images/13.jpg";
-import image14 from "../assets/images/14.jpg";
-import image15 from "../assets/images/15.jpg";
-import image16 from "../assets/images/16.jpg";
-import image17 from "../assets/images/17.jpg";
-import image18 from "../assets/images/18.jpg";
-import image19 from "../assets/images/19.jpg";
+// import image01 from "/public/01.jpg";
+// import image02 from "";
+// import image03 from "";
+// import image04 from "";
+// import image05 from "";
+// import image06 from "";
+// import image07 from "";
+// import image08 from "";
+// import image09 from "";
+// import image10 from "";
+// import image11 from "";
+// import image12 from "";
+// import image13 from "";
+// import image14 from "";
+// import image15 from "";
+// import image16 from "";
+// import image17 from "";
+// import image18 from "";
+// import image19 from "";
 
 
 
 const photos = [
-  { img: image01, title: "Breakfast", featured: true },
-  { img: image02, title: "Burger" },
-  { img: image03, title: "Camera" },
-  { img: image04, title: "Coffee" },
-  { img: image05, title: "Hats" },
-  { img: image06, title: "Honey" },
-  { img: image07, title: "Fern", featured: true },
-  { img: image08, title: "Basketball" },
-  { img: image09, title: "Mushrooms" },
-  { img: image10, title: "Tomato basil" },
-  { img: image11, title: "Sea star", featured: true },
-  { img: image12, title: "Bike" },
-  { img: image13, title: "Bike" },
-  { img: image14, title: "Bike" },
-  { img: image15, title: "Bike" },
-  { img: image16, title: "Bike" },
-  { img: image17, title: "Bike" },
-  { img: image18, title: "Bike" },
-  { img: image19, title: "Bike" },
+  { img: "/01.jpg", title: "Breakfast", featured: true },
+  { img: "/02.jpg", title: "Burger" },
+  { img: "/03.jpg", title: "Camera" },
+  { img: "/04.jpg", title: "Coffee" },
+  { img: "/05.jpg", title: "Hats" },
+  { img: "/06.jpg", title: "Honey" },
+  { img: "/07.jpg", title: "Fern", featured: true },
+  { img: "/08.jpg", title: "Basketball" },
+  { img: "/09.jpg", title: "Mushrooms" },
+  { img: "/10.jpg", title: "Tomato basil" },
+  { img: "/11.jpg", title: "Sea star", featured: true },
+  { img: "/12.jpg", title: "Bike" },
+  { img: "/13.jpg", title: "Bike" },
+  { img: "/14.jpg", title: "Bike" },
+  { img: "/15.jpg", title: "Bike" },
+  { img: "/16.jpg", title: "Bike" },
+  { img: "/17.jpg", title: "Bike" },
+  { img: "/18.jpg", title: "Bike" },
+  { img: "/19.jpg", title: "Bike" },
+  { img: "/20.jpg", title: "Bike" },
+  { img: "/21.jpg", title: "Bike" },
+  { img: "/22.jpg", title: "Bike" },
+  { img: "/23.jpg", title: "Bike" },
+  { img: "/24.jpg", title: "Bike" },
+  { img: "/25.jpg", title: "Bike" },
+  { img: "/26.jpg", title: "Bike" },
+  { img: "/27.jpg", title: "Bike" },
+  { img: "/28.jpg", title: "Bike" },
+  { img: "/29.jpg", title: "Bike" },
+  { img: "/30.jpg", title: "Bike" },
+  { img: "/31.jpg", title: "Bike" },
+  { img: "/32.jpg", title: "Bike" },
+  { img: "/33.jpg", title: "Bike" },
+  { img: "/34.jpg", title: "Bike" },
+  { img: "/35.jpg", title: "Bike" },
+  { img: "/36.jpg", title: "Bike" },
+  { img: "/37.jpg", title: "Bike" },
+  { img: "/38.jpg", title: "Bike" },
+  { img: "/39.jpg", title: "Bike" },
+  { img: "/40.jpg", title: "Bike" },
+  { img: "/41.jpg", title: "Bike" },
+  { img: "/42.jpg", title: "Bike" },
+  { img: "/43.jpg", title: "Bike" },
+  { img: "/44.jpg", title: "Bike" },
+  { img: "/45.jpg", title: "Bike" },
+  { img: "/46.jpg", title: "Bike" },
+  { img: "/47.jpg", title: "Bike" },
+  { img: "/48.jpg", title: "Bike" },
+  { img: "/49.jpg", title: "Bike" },
+  { img: "/50.jpg", title: "Bike" },
+  { img: "/51.jpg", title: "Bike" },
+  { img: "/52.jpg", title: "Bike" },
+  { img: "/53.jpg", title: "Bike" },
+  { img: "/54.jpg", title: "Bike" },
+  { img: "/55.jpg", title: "Bike" },
+  { img: "/56.jpg", title: "Bike" },
+  { img: "/57.jpg", title: "Bike" },
+  { img: "/58.jpg", title: "Bike" },
 ];
+
 
 
 export default function PhotoShowcase() {
@@ -78,7 +118,7 @@ export default function PhotoShowcase() {
                         <img
                            src={item.img}
                            alt={item.title}
-                           onClick={() => handleImageClick(index)}
+                           onClick={() => handleImageClick(i)}
                            className="w-full h-full cursor-pointer object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                         <div className="absolute inset-0 group-hover:opacity-90 transition"></div>
@@ -130,12 +170,12 @@ export default function PhotoShowcase() {
          /> */}
 
          <Lightbox
-  open={open}
-  index={startIndex}
-  close={() => setOpen(false)}
-  slides={photos.map(photo => ({ src: photo.img }))}
-  plugins={[Fullscreen, Slideshow]}
-/>
+            open={open}
+            index={startIndex}
+            close={() => setOpen(false)}
+            slides={photos.map(photo => ({ src: photo.img }))}
+            plugins={[Fullscreen, Slideshow]}
+         />
 
 
       </>

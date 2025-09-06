@@ -31,7 +31,6 @@ import avatar from '../assets/IMG_8912.jpg'
 import Devil from './Devil';
 import Breadcrumbs from './Breadcrumbs';
 import ContactLinks from './ContactLinks';
-// import Downloads from './DownloadablesShowcase';
 import DownloadablesShowcase from './DownloadablesShowcase';
 
 const Home = () => {
