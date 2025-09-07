@@ -261,7 +261,7 @@ const Home = () => {
                   </header>
 
                   <div className="flex flex-col justify-center text-center items-center lg:my-10 select-none">
-                     <h1 className='lg:text-[64px] text-[50px] my-3 text-amber-500 tracking-wide'><span className='text-gray-700'>hey!</span> A12345</h1>
+                     <h1 className='lg:text-[64px] text-[50px] my-3 text-amber-500 tracking-wide'><span className='text-gray-700'>hey!</span> Ayeshaa</h1>
                      <h2 className='text-2xl pb-8 pt-4 text-gray-500 '>
                         Wishing you joy on your special day
                      </h2>
@@ -319,7 +319,7 @@ const Home = () => {
                      alt="avatar"
                   />
                   <div className='select-none'>
-                     <h3 className="text-primary text-[30px]">ami u-man</h3>
+                     <h3 className="text-primary text-[30px]">ami jhuti</h3>
                      <p className="text-[14px]">
                         Amr <span className="text-primary">chul khule</span> balcony te boshe <span className="text-primary">time spend</span> korte bhalo lage
                      </p>
